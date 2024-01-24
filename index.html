@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body>
+  <header>
+    <a href="" class="brand">Anime.web</a>
+    <div class="menu-btn">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Explore</a>
+        <a href="">Gallery</a>
+        <a href="">Contact</a>
+      </div>
+    </div>
+  </header>
+  <section class="home">
+    <img src="/img/bg/web-1.jpg" alt="" class="slider-vd active">
+    <img src="/img/bg/web-2.jpg" alt="" class="slider-vd">
+    <img src="/img/bg/web-3.jpg" alt="" class="slider-vd">
+    <img src="/img/bg/web-4.jpg" alt="" class="slider-vd">
+    <img src="/img/bg/web-5.jpg" alt="" class="slider-vd">
+    <div class="content active">
+      <h1>Anime.<br><span>Watching</span></h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quas obcaecati consequuntur ab eos, laboriosam quo pariatur, impedit, eaque aspernatur dicta nesciunt sed. Nam vero fuga, sint facilis velit vitae.
+      Fuga rem quaerat iure dolor perferendis animi quo quisquam inventore incidunt, perspiciatis veniam dolores. Asperiores velit officia eaque sed corrupti, quos at assumenda optio, dolorum quibusdam odio nobis facilis soluta.</p>
+      <a href="">Read more</a>
+    </div>
+    <div class="content">
+      <h1>Manga.<br><span>Reading</span></h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quas obcaecati consequuntur ab eos, laboriosam quo pariatur, impedit, eaque aspernatur dicta nesciunt sed. Nam vero fuga, sint facilis velit vitae.
+      Fuga rem quaerat iure dolor perferendis animi quo quisquam inventore incidunt, perspiciatis veniam dolores. Asperiores velit officia eaque sed corrupti, quos at assumenda optio, dolorum quibusdam odio nobis facilis soluta.</p>
+      <a href="">Read more</a>
+    </div>
+    <div class="content">
+      <h1>Anime.<br><span>Watching</span></h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quas obcaecati consequuntur ab eos, laboriosam quo pariatur, impedit, eaque aspernatur dicta nesciunt sed. Nam vero fuga, sint facilis velit vitae.
+      Fuga rem quaerat iure dolor perferendis animi quo quisquam inventore incidunt, perspiciatis veniam dolores. Asperiores velit officia eaque sed corrupti, quos at assumenda optio, dolorum quibusdam odio nobis facilis soluta.</p>
+      <a href="">Read more</a>
+    </div>
+    <div class="content">
+      <h1>Anime.<br><span>Watching</span></h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quas obcaecati consequuntur ab eos, laboriosam quo pariatur, impedit, eaque aspernatur dicta nesciunt sed. Nam vero fuga, sint facilis velit vitae.
+      Fuga rem quaerat iure dolor perferendis animi quo quisquam inventore incidunt, perspiciatis veniam dolores. Asperiores velit officia eaque sed corrupti, quos at assumenda optio, dolorum quibusdam odio nobis facilis soluta.</p>
+      <a href="">Read more</a>
+    </div>
+    <div class="content">
+      <h1>Anime.<br><span>Watching</span></h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quas obcaecati consequuntur ab eos, laboriosam quo pariatur, impedit, eaque aspernatur dicta nesciunt sed. Nam vero fuga, sint facilis velit vitae.
+      Fuga rem quaerat iure dolor perferendis animi quo quisquam inventore incidunt, perspiciatis veniam dolores. Asperiores velit officia eaque sed corrupti, quos at assumenda optio, dolorum quibusdam odio nobis facilis soluta.</p>
+      <a href="">Read more</a>
+    </div>
+    <div class="media-icons">
+      <a href="" class="fab fa-facebook"></a>
+      <a href="" class="fab fa-instagram"></a>
+      <a href="" class="fab fa-twitter"></a>
+    </div>
+    <div class="slider-navigation">
+      <div class="nav-btn active"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+      <div class="nav-btn"></div>
+    </div>
+  </section>
+
+
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const navigation = document.querySelector('.navigation');
+
+    menuBtn.addEventListener('click', ()=>{
+      menuBtn.classList.toggle('active');
+      navigation.classList.toggle('active')
+    })
+    //slider navigation
+
+    const btns = document.querySelectorAll('.nav-btn');
+    const slides = document.querySelectorAll('.slider-vd');
+    const content = document.querySelectorAll('.content');
+    let sliderNav = function(manual){
+      btns.forEach((btn)=>{
+        btn.classList.remove('active');
+      });
+      slides.forEach((slide)=>{
+        slide.classList.remove('active');
+      });
+      content.forEach((cont)=>{
+        cont.classList.remove('active');
+      });
+      btns[manual].classList.add('active');
+      slides[manual].classList.add('active');
+      content[manual].classList.add('active');
+    }
+    btns.forEach((btn,i)=> {
+      btn.addEventListener('click', ()=>{
+        sliderNav(i);
+      });
+    });
+  </script>
+</body>
+</html>
